@@ -17,21 +17,16 @@ TTF_SRC = $(TTF_BIN:.ttf=.h)
 all: $(IMG_SRC) $(AUD_SRC) $(MAP_SRC) $(MOD_SRC) $(TTF_SRC)
 
 %.h: %.png
-	xxd -i $< > $@
-	sed -i'' 's|unsigned int|const unsigned int|g' $@
+	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
 
 %.h: %.ogg
-	xxd -i $< > $@
-	sed -i'' 's|unsigned int|const unsigned int|g' $@
+	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
 
 %.h: %.ttf
-	xxd -i $< > $@
-	sed -i'' 's|unsigned int|const unsigned int|g' $@
+	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
 
 maps.h: maps
-	xxd -i $< > $@
-	sed -i'' 's|unsigned int|const unsigned int|g' $@
+	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
 
 models.h: models
-	xxd -i $< > $@
-	sed -i'' 's|unsigned int|const unsigned int|g' $@
+	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
