@@ -5,8 +5,8 @@ IMG_SRC = $(IMG_PNG:.png=.h)
 AUD_OGG = $(wildcard audio/*.ogg)
 AUD_SRC = $(AUD_OGG:.ogg=.h)
 
-MAP_BIN = maps blend.map
-MAP_SRC = maps.h blend.map.h
+MAP_BIN = maps
+MAP_SRC = maps.h
 
 MOD_BIN = models
 MOD_SRC = models.h
@@ -14,7 +14,11 @@ MOD_SRC = models.h
 TTF_BIN = $(wildcard ttf/*.ttf)
 TTF_SRC = $(TTF_BIN:.ttf=.h)
 
-all: $(IMG_SRC) $(AUD_SRC) $(MAP_SRC) $(MOD_SRC) $(TTF_SRC)
+BLD_GLB = $(wildcard blend/*.gltf)
+BLD_MAP = $(BLD_GLB:.gltf=.map)
+BLD_SRC = $(BLD_MAP:.map=.h)
+
+all: $(IMG_SRC) $(AUD_SRC) $(MAP_SRC) $(MOD_SRC) $(TTF_SRC) $(BLD_MAP) $(BLD_SRC)
 
 %.h: %.png
 	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
@@ -31,5 +35,8 @@ maps.h: maps
 models.h: models
 	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
 
-blend.map.h: blend.map
+%.map: %.gltf
+	../tools/mapc $< > $@
+
+%.h: %.map
 	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
