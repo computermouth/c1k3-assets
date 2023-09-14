@@ -1,0 +1,12 @@
+blender:
+	cube to .5**3, apply scale
+	select vertex, mesh > snap > cursor to selected, object mode, object > origin > origin to cursor
+	textures are geometry -> vector(scale) -> image -> material output (mesh.png)
+	when copying a mesh, use duplicate, not copy/paste
+	blender -> file -> external data -> automatically pack
+
+models/uv/texture:
+	select dude, edit mode, 'a' to select all of model, UV -> smart project
+	texture paint -> tool -> single image mode -> new image -> "some texture"
+	paint
+	material -> new -> base color -> image texture -> "some texture"
