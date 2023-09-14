@@ -14,7 +14,8 @@ MOD_SRC = models.h
 TTF_BIN = $(wildcard ttf/*.ttf)
 TTF_SRC = $(TTF_BIN:.ttf=.h)
 
-BLD_GLB = $(wildcard blend/*.gltf)
+BLD_CHK = $(wildcard blend/*.blend)
+BLD_GLB = $(BLD_CHK:.blend=.gltf)
 BLD_MAP = $(BLD_GLB:.gltf=.map)
 BLD_SRC = $(BLD_MAP:.map=.h)
 
@@ -34,6 +35,10 @@ maps.h: maps
 
 models.h: models
 	xxd -i $< | sed 's|unsigned int|const unsigned int|g' > $@
+
+%.gltf: %.blend
+	echo "E: $< is newer than $@"
+	exit 1
 
 %.map: %.gltf
 	../tools/mapc $< > $@

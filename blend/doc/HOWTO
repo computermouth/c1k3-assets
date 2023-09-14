@@ -4,6 +4,7 @@ blender:
 	textures are geometry -> vector(scale) -> image -> material output (mesh.png)
 	when copying a mesh, use duplicate, not copy/paste
 	blender -> file -> external data -> automatically pack
+	(can't automate export to gltf, as this (https://docs.blender.org/api/current/bpy.ops.export_scene.html) doesn't seem to support choosing to export uvs and shape keys, not sure just don't care really)
 
 models/uv/texture:
 	select dude, edit mode, 'a' to select all of model, UV -> smart project
