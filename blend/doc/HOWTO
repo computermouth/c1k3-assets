@@ -10,4 +10,5 @@ models/uv/texture:
 	select dude, edit mode, 'a' to select all of model, UV -> smart project
 	texture paint -> tool -> single image mode -> new image -> "some texture"
 	paint
+	make sure to save in image/uv panel -> also pack image
 	material -> new -> base color -> image texture -> "some texture"
