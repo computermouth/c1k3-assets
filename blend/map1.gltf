@@ -5512,7 +5512,7 @@
 		{
 			"extras":{
 				"_type":"entity",
-				"range":"64",
+				"range":"48",
 				"_entity":"trigger_levelchange"
 			},
 			"mesh":297,
