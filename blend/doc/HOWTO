@@ -12,3 +12,6 @@ models/uv/texture:
 	paint
 	make sure to save in image/uv panel -> also pack image
 	material -> new -> base color -> image texture -> "some texture"
+
+fill:
+	select all in edit mode, alt+f to fill
