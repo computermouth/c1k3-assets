@@ -15,3 +15,10 @@ models/uv/texture:
 
 fill:
 	select all in edit mode, alt+f to fill
+
+rig to shape key:
+	https://www.youtube.com/watch?v=qwJzyoEWgCE
+	import thing, apply skin
+	select mesh, modifiers, dropdown, save as shape
+	always save frame 0
+	delete armature, scene, and delete basis frame
