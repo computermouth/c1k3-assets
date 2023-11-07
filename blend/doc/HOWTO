@@ -22,3 +22,13 @@ rig to shape key:
 	select mesh, modifiers, dropdown, save as shape
 	always save frame 0
 	delete armature, scene, and delete basis frame
+
+tpose:
+	https://www.youtube.com/watch?v=Q5hDnOper8o
+	import tpose
+	scale and place, maybe delete fingers and toes
+	duplicate tpose by copying and pasting armature
+	in edit mode, line up bones
+	select mesh, ctrl-select armature
+	right click, parent with automatic weights
+	change to pose mode, rotate
